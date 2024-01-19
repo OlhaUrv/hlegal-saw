@@ -1,0 +1,127 @@
+
+// PAGE TEAM INSIDE_________________________________________
+
+.wrapper-white-team {
+	// max-height: 100%;
+
+	// @include vieport-lg {
+	// 	max-height: 87%;
+	// }
+}
+.section-team-inside {
+	padding-top: 60px;
+}
+
+.team-img-inside {
+	width: 315px;
+	height: 375px;
+	object-fit: cover;
+	border-radius: $radius-md;
+	grid-column-start: 1;
+	@include vieport-md {
+		width: 300px;
+	}
+}
+
+.section-team {
+	&__cards-inside {	
+		padding-bottom: 30px;
+		@include vieport-md {
+			padding-bottom: 0;
+			display: grid;
+			grid-template-columns: 300px 1fr;
+			grid-template-rows: 375px 30px 30px 1fr;
+		}	
+		@include vieport-lg {
+			grid-template-columns: 300px 1fr;
+			grid-template-rows: repeat(2, 187.5px) 1fr;
+		}
+		@include vieport-xl {
+			grid-template-rows: repeat(5, 110px);
+		}
+  }
+	 
+	&__cards-block-title {
+		padding-top: 30px;
+		
+		@include vieport-md {
+			grid-column-start: 2;
+			justify-content: center;
+			align-items: center;	
+			padding-left: 30px;		
+		}
+		@include vieport-lg {
+			padding-left: 60px;
+			padding-top: 0;
+		}
+		@include vieport-xl {
+			padding-bottom: 30px;
+		}
+	}
+
+	&__inside-cards-title {
+		@include main-gradient-text;
+		@include title-red;
+		font-size: 38px;
+		padding-bottom: 15px;
+	}
+	&__inside-cards-title-block {
+		@include vieport-xl {
+			display: flex;
+			gap: 10px;
+		}
+	}
+
+	&__cards-position-inside {
+		@include paragraph-sm;
+		color: $text-color;
+		padding-bottom: 10px;
+	}
+	&__cards-block-inside {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		padding-bottom: 30px;
+		@include vieport-md {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: 3;
+			grid-row-end: 7;
+		}
+		
+		@include vieport-lg {
+			padding-left: 60px;
+			grid-column-start: 2;
+			grid-row-start: 2;
+			
+		}
+	}
+	&__cards-dsc-inside-one {
+		@include paragraph;
+		color: #000;
+		padding-top: 30px;
+	}
+	&__cards-dsc-inside {
+		@include paragraph;
+		color: #000;
+	}
+	&__inside-subtitle {
+		@include h3-caps;
+		padding-bottom: 15px;
+	}
+}	
+
+.team-inside-email {
+	text-decoration: none;
+	color: $regular-color;
+	display: block;
+	padding-bottom: 10px;
+}
+
+.team-inside-profile {
+	text-decoration: none;
+	color: $regular-color;
+	display: block;
+	padding-bottom: 30px;
+}
+

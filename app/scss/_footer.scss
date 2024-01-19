@@ -1,0 +1,135 @@
+.footer {
+  background: $bg-color;
+  // padding: 30px 0 40px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 30px;
+
+  @include vieport-md {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(2, 30px) repeat(2, 40px);
+    justify-content: space-between;
+  }
+  
+  &__outline {
+    padding-left: 100%;
+    border-top: 4px solid $separator-color;
+    @include vieport-md {
+      padding: 0;
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+    
+  }
+  
+  &__block-location {
+    padding-top: 30px;
+    text-align: center;
+  
+    @include vieport-md {
+      // text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      grid-column-start: 1;
+      grid-row-start: 2;
+    }
+  }
+  
+  &__address {
+    @include paragraph;
+    color: $main-color;
+    padding-bottom: 10px;
+    
+  }
+
+  .dotted {
+    background: $text-color;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  &__map {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-bottom: 21px;
+    @include h4;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  &__block-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    
+    
+    @include vieport-md {
+      
+      flex-direction: row;
+      justify-content: start;
+      gap: 10px;
+      text-align: right;
+      grid-column-start: span 2;
+      grid-row-start: 4;
+    }
+  }
+
+  &__phone {
+  @include h4;
+  color: $alt-color;
+  text-decoration: none;
+  padding: 10px;
+
+    @include vieport-md {
+      padding: 0;      
+  }
+
+  &__social {
+    text-decoration: none;
+    padding: 10px 0;
+    display: block; 
+    // text-align: center;
+    
+      @include vieport-md {
+        padding: 21px 0;
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+  
+  svg {
+    width: 38px;
+    height: 38px;
+    fill: $active-color;
+      &:hover {
+        fill: $accent-color;
+      }
+    }
+  
+  &__copyright {
+    @include copyright;
+    text-align: center;
+    
+    @include vieport-md {
+     grid-column-start: 1;
+      grid-row-start: 3; 
+      text-align: end; 
+    }
+      
+  }
+}
+
+.email {
+  text-decoration: none;
+  @include h4;
+}

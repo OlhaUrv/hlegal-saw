@@ -1,0 +1,226 @@
+// !vars
+$main-color: #323264;
+$alt-color: #46466e;
+$soft-color: #686887;
+$accent-color: #f0145a;
+$regular-color: #24a3ff;
+$hover-coolor: #0085ff;
+$active-color: #006ccf;
+$bg-color: #f5f5fa;
+$bg-alt-color: #ededf7;
+$text-color: #b3b3ba;
+$basic-white: #ffffff;
+$separator-color: #e6e6f0;
+$gradient: linear-gradient(130deg, #323264, #323264 70%, #a54b5f);
+$gradient-soft: linear-gradient(42deg,  #323264 15%,  #323264 50%,  #7a425e 88%);
+$gradient-red: linear-gradient(325deg, #f0145a 5%, #693264 70%);
+$gradient-supersoft: linear-gradient(230deg, #323264 10%, #323264 60%, #643e72 90%);
+$gradient-red-text: linear-gradient(90deg, #f0145a, #ef8080);
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-icon: 24px;
+$radius-rounded: 50%;
+
+// !breakpoints
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+$breakpoint-xxl: 1920px;
+
+// !MIXINS
+
+@mixin vieport-md {
+	@media (min-width: $breakpoint-md) {
+		@content;
+	}
+}
+
+@mixin vieport-lg {
+	@media (min-width: $breakpoint-lg) {
+		@content;
+	}
+}
+
+@mixin vieport-xl {
+	@media (min-width: $breakpoint-xl) {
+		@content;
+	}
+}
+
+@mixin vieport-xxl {
+	@media (min-width: $breakpoint-xxl) {
+		@content;
+	}
+}
+
+@mixin main-gradient-text($bg-color: $gradient-red-text) {
+	background: $bg-color;
+	color: transparent;
+	background-clip: text;
+}
+
+@mixin title($color: $basic-white) {
+	font-size: 38px;
+	font-weight: 700;
+	color: $color;
+}
+
+@mixin title-red {
+	font-size: 30px;
+	font-weight: 700;
+  @include vieport-md {
+    font-size: 38px;
+  }
+}
+
+@mixin subtitle($color: #000) {
+	font-weight: 700;
+	font-size: 30px;
+	color: $color;
+
+	@include vieport-md {
+		font-size: 38px;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin base-link($color: $regular-color, $hover: $accent-color) {
+	color: $color;
+	text-decoration: none;
+	transition: .2s;
+
+	&:hover {
+		color: $hover;
+	}
+
+  &:hover::before {
+    border-color: $accent-color;
+  }
+
+}
+
+@mixin h3($color: $basic-white) {
+ color: $active-color;
+ font-size: 22px;
+ font-weight: 700;
+
+}
+
+@mixin h3-article ($color: $main-color){
+  color: $alt-color;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  @include vieport-md {
+    font-size: 22px;
+  }
+}
+
+@mixin h3-caps {
+  color: $main-color;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin h4($color: $regular-color) {
+  color: $color;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin paragraph($color: $basic-white) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+	color: $basic-white;
+}
+
+@mixin copyright {
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: right;
+}
+
+@mixin paragraph-regular {
+  color: $text-color;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@mixin paragraph-sm {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; 
+}
+
+@mixin unordered-list {
+  width: 6px;
+  height: 6px;
+  background: $accent;
+  border-radius: 50%;
+  text-align: center;
+}
+
+@mixin ordered-list {
+  color: $accent;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+@mixin link-regular {
+  text-decoration: none;
+  color: $active-regular;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+@mixin link-hover ($link-regulas:hover) {
+  text-decoration: none;
+  color: $accent;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+@mixin introduction {
+  color: $basic-white;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+
+@mixin post-title {
+  color: $main-color;
+  font-size: 20px;
+  font-weight: 700;
+  @include vieport-md {
+    font-size: 30px;
+  }
+}

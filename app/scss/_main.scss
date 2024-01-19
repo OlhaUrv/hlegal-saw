@@ -1,0 +1,224 @@
+
+// SECTION PARTNERS CARDS_____________________________________________
+
+.section-partners {
+  
+  @include vieport-xxl {
+    padding-bottom: 60px;
+  }
+  
+  &__title {
+    @include h3-caps;
+    text-align: center;
+    padding: 60px 0 30px;
+  }
+
+  &__cards {
+    @include vieport-md {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include vieport-xxl {
+      padding: 0 100px;
+    }
+  }
+
+  &__cards-hillel {
+    background: url('../images/hillel.png') #1C4280 no-repeat center;
+    background-size: 217px 48px;
+
+    @include vieport-xxl {
+      border-radius: $radius-md 0 0 0;
+    }
+          
+  }
+
+  &__cards-wannabiz {
+    background: url('../images/wannabiz.png') #143646 no-repeat center;
+    background-size: 199px 32px;
+  }
+  
+  &__cards-tapgerine {
+    background: url('../images/tapgerine.png') #F48B30 no-repeat center;
+    background-size: 179px 44px;
+  }
+  
+  &__cards-3dlook {
+    background: url('../images/3dlook.png') #9E4DC3 no-repeat center;
+    background-size: 180px 42px;
+
+    @include vieport-xxl {
+      border-radius: 0 $radius-md 0 0;
+    }
+  }
+  
+  &__cards-orangear {
+    background: url('../images/orangear.png') #FD9339 no-repeat center;
+    background-size: 174px 44px;
+  }
+  
+  &__cards-adtelligent {
+    background: url('../images/adtelligent.png') #E2E2E4 no-repeat center;
+    background-size: 223px 48px;
+  }
+  
+  &__cards-clickky {
+    background: url('../images/clickky.png') #C71C36 no-repeat center;
+    background-size: 138px 61px;
+  }
+  
+  &__cards-eco {
+    background: url('../images/eco-leasing.png') #DCF3F9 no-repeat center;
+    background-size: 146px 76px;
+  }
+
+  &__cards-infra {
+    background: url('../images/ingratek.png') #EAEAEA no-repeat center;
+    background-size: 182px 60px;
+
+    @include vieport-xxl {
+      border-radius: 0 0 0 $radius-md;
+    }
+  }
+  
+  &__cards-city {
+    background: url('../images/city-park.png') #282240 no-repeat center;
+    background-size: 181px 38px;
+
+  }
+  
+  &__cards-art {
+    background: url('../images/artprint.png') #1D4568 no-repeat center;
+    background-size: 189px 46px;
+  }
+  
+  &__cards-ultimate {
+    background: url('../images/ultimatecard.png') #000 no-repeat center;
+    background-size: 152px 95px;
+
+    @include vieport-xxl {
+      border-radius: 0 0 $radius-md 0;
+    }
+
+  }
+
+  &__cards div {
+    min-height: 120px;
+    justify-content: center;
+    align-items: center;
+
+    @include vieport-md {
+      flex: 1 1 256px;
+    }
+
+    @include vieport-xl {
+      flex: 1 1 360px;
+    }
+
+    @include vieport-xxl {
+      flex: 1 1 430px;
+    }
+  }
+
+  &__cards-clickky, &__cards-eco, &__cards-infra, &__cards-city, &__cards-art, &__cards-ultimate {
+    display: none;
+
+    @include vieport-md {
+      display: block;
+    }
+
+  }
+}
+
+
+// PUBLICATION CARDS__________________________________________________________________
+
+.section-publications {
+  background: $bg-color;
+  padding-top: 30px;
+}
+
+.section-publications {
+   
+  &__title {
+    padding-bottom: 30px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+    
+    
+    @include vieport-md {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between; 
+    }
+  }
+
+  
+  &__cards-april {
+    background: $basic-white;
+    border-radius: $radius-md;
+          
+  } 
+
+  &__cards-september {
+    background: $basic-white;
+    border-radius: $radius-md;
+    
+  }
+
+  &__cards-august {
+    background: $basic-white;
+    border-radius: $radius-md;
+  }
+
+  &__cards-april, &__cards-september {
+    @include vieport-md {
+      flex: 1 1 47%; 
+    }
+  }
+
+  &__cards-april, &__cards-september, &__cards-august {
+    @include vieport-lg {
+      flex: 1 1 31%;
+      border-radius: $radius-md;
+    }
+  }
+
+  &__cards-block {
+    padding: 30px;
+  }
+
+  &__cards-title {
+    @include h4;
+    padding-bottom: 15px;
+  }
+
+  &__cards-date {
+    @include paragraph-regular;
+    padding-bottom: 15px;
+  }
+
+  &__cards-dsc {
+    @include paragraph-sm;
+  }  
+}
+
+.cards-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+  
+.cards-title-link {
+  text-decoration: none;
+  display: block;
+  @include base-link;
+}
+

@@ -1,0 +1,100 @@
+body {
+	font-family: 'Montserrat';
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.wrapper {
+	background: $gradient-supersoft;
+	border-radius: 0px 0px 12px 12px;
+
+}
+
+.wrapper-border__down {
+
+	&-grey {
+		border: 5px solid #cacadb;
+	margin: 0 20px;
+	border-radius: 0  0 $radius-md $radius-md;
+	}
+	&-lightgrey {
+		border: 5px solid #e7e7e2;
+	margin: 0 40px;
+	border-radius: 0  0 $radius-md $radius-md;
+	}
+}
+
+.container {
+	// від 0 до бескінечності
+	padding: 0 30px;
+
+	@include vieport-md {
+		// від 768 до бескінечності
+		max-width: 708px;
+		margin: 0 auto;
+	}
+
+	@include vieport-lg {
+		// від 1024 до бескінечності
+		max-width: 964px;
+	}
+
+	@include vieport-xl {
+		// від 1440 до бескінечності
+		max-width: 1380px;
+	}
+
+	@include vieport-xxl {
+		// від 1920 до бескінечності
+		max-width: 1660px;
+	}
+}
+
+.dotted {
+	display: none;
+
+	@include vieport-md {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: $radius-rounded;
+		background: $separator-color;
+
+		&--gray {
+			background: $text-color;
+		}
+	}
+}
+
+.arrow {
+	position: relative;
+		
+	&::before {
+		content: '';
+		position: absolute;
+		top: 6px;
+		left: 2px;
+		width: 6px;
+		height: 6px;
+		border-bottom: 2px solid $regular-color;
+		border-left: 2px solid $regular-color;
+		transform: rotate(-135deg);
+	}
+
+	&:hover::before {
+    border-color: $accent-color;
+  }
+}
+
+.separate {
+	border-top: 4px solid $separator-color;
+	padding-left: 100%;
+}
+
+.slash {
+	border-left: 4px solid $accent-color;
+	width: 12px;
+	height: 26px;
+	margin-bottom: 14px;
+	transform: rotate(20deg);
+}

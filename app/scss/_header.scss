@@ -1,0 +1,433 @@
+.head {
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	background: url('../images/hilegal-bg.png') no-repeat center / auto 100%;
+	// .head__header
+
+	&__header {
+	}
+
+	// .head__title
+
+	&__title {
+		@include title;
+		padding: 0 30px;
+		text-transform: lowercase;
+		text-align: center;
+	}
+
+	// .head__link
+
+	&__link {
+		width: 42px;
+		height: 42px;
+		border: 1px solid $basic-white;
+		border-radius: $radius-rounded;
+		position: relative;
+		margin: 0 auto 30px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 12px;
+			width: 14px;
+			height: 14px;
+			border-bottom: 2px solid $basic-white;
+			border-left: 2px solid $basic-white;
+			transform: rotate(-45deg);
+		}
+		&:hover::before {
+      border-color: $accent-color;
+
+    }
+	}
+}
+
+.header {
+
+	@include vieport-md {
+		padding: 50px 0 0;
+	}
+
+	// .header__container 
+
+	&__container {
+		position: relative;
+	}
+
+	// .header__inner
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: rgba(245, 245, 250, 0.20);
+		padding: 10px 30px;
+		margin: 0 -30px 15px;
+
+		@include vieport-md {
+			margin: 0 0 30px;
+			background: transparent;
+			justify-content: flex-start;
+			gap: 6px;
+			padding: 0;
+		}
+
+		@include vieport-lg {
+			margin: 0 0 16px;
+			justify-content: flex-end;
+		}
+	}
+
+	// .header__langs
+
+	&__langs {
+		display: flex;
+	}
+
+	// .header__langs-item
+
+	&__langs-item {
+	}
+
+	// .header__langs-link
+
+	&__langs-link {
+		color: $basic-white;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 5px 7px;
+		letter-spacing: 1px;
+		font-size: 12px;
+		display: block;
+		text-decoration: none;
+		border-radius: $radius-sm;
+
+		&.active {
+			background: $accent-color;
+		}
+	}
+
+	// .header__address
+
+	&__address {
+		display: none;
+
+		@include vieport-md {
+			display: block;
+			color: $text-color;
+		}
+	}
+
+	// .header__phone
+
+	&__phone {
+		text-decoration: none;
+		color: $basic-white;
+		font-weight: 700;
+	}
+
+	// .header__social
+
+	&__social {
+		display: none;
+		line-height: 10px;
+		@include vieport-md {
+			display: block;
+			color: $basic-white;
+			font-size: 20px;
+			text-decoration: none;
+				
+			
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: $basic-white;
+			&:hover {
+				fill: $accent-color;
+			}
+		}
+	}
+
+	// .header__box
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include vieport-md {
+			margin-bottom: 30px;
+		}
+
+		@include vieport-lg {
+			position: absolute;
+			left: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+			margin-bottom: 0;
+		}
+	}
+
+	// .header__box-logo
+
+	&__box-logo {
+
+		svg {
+			width: 69px;
+			height: 32px;
+
+			@include vieport-md {
+				width: 130px;
+				height: 60px;
+			}
+		}
+	}
+
+	// .header__box-burger
+
+	&__box-burger {
+		width: 26px;
+		height: 18px;
+		position: relative;
+		cursor: pointer;
+
+		@include vieport-md {
+			display: none;
+		}
+
+		&::before,
+		&::after,
+		span {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: $basic-white;
+		}
+		&::after {
+			top: auto;
+			bottom: 0;
+		}
+
+		span {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	// .header__nav
+
+	&__nav {
+		position: fixed;
+		z-index: 10;
+		bottom: -260%; 
+		left: 8px;
+		right: 8px;
+		background: $basic-white;
+		border-radius: $radius-sm $radius-sm 0 0;
+		padding: 12px;
+		transition: bottom .3s linear;
+
+		@include vieport-md {
+			background: transparent;
+			position: static;
+			border-radius: 0;
+			padding: 0;
+		}
+
+		&.active {
+			// display: block;
+			bottom: 0;
+		}
+
+		@include vieport-md {
+			// display: block;
+		}
+	}
+
+	// .header__nav-close
+
+	&__nav-close {
+		width: 26px;
+		height: 26px;
+		position: relative;
+		margin: 0 0 20px auto;
+		cursor: pointer;
+
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: $accent-color;
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+		@include vieport-md {
+			display: none;
+		}
+	}
+
+	// .header__list
+
+	&__list {
+		display: flex;
+		gap: 15px;
+		flex-direction: column;
+		text-align: center;
+
+		@include vieport-md {
+			flex-direction: row;
+		}
+
+		@include vieport-lg {
+			justify-content: flex-end;
+		}
+	}
+
+	// .header__list-item
+
+	&__list-item {
+		@include vieport-md {
+			border-bottom: 4px solid transparent;
+			border-radius: 0px;
+			background: transparent;	
+		}
+	}
+
+	&__list-item {
+		@include vieport-md {
+			&:hover {
+				border-bottom: 4px solid $accent-color;
+					border-radius: 0px;
+					transition-duration: .2s;	
+			}
+			&.active {
+				border-color: $accent-color;
+			}
+		}
+	}
+
+	// .header__list-link
+
+	&__list-link {
+		display: block;
+		color: $regular-color;
+		font-size: 24px;
+		padding: 7px 0;
+		text-decoration: none;
+		background: $bg-color;
+		border-radius: $radius-sm;
+		font-weight: 700;
+		&:active {
+			background: $text-color;
+		}
+		@include vieport-md {
+			padding: 0;
+			@include base-link($basic-white, $accent-color);
+			background: transparent;
+			font-size: 16px;
+			&.active {
+				color: $accent-color;
+			}
+		}
+	}
+}
+
+.section-services__name {
+	display: flex;
+}
+
+.services-title {
+	@include h3-caps;
+	color: $active-color;
+	cursor: pointer;
+	text-decoration: none;
+	display: flex;
+	@include base-link;
+}
+
+.section-services {
+    
+  &__title {
+  @include subtitle;
+  @include main-gradient-text;
+	// padding-bottom: 30px;
+  }
+
+  &__list-block {
+    flex: 1 1 294px;
+		margin: 30px 0;
+    
+		@include vieport-md {
+			margin: 0;
+		}
+
+    @include vieport-lg {
+      flex: 1 1 261px;
+    }
+
+    @include vieport-xl {
+      flex: 1 1 400px;
+    }
+
+    @include vieport-xxl {
+      flex: 1 1 493px;
+    }     
+  }
+
+  &__list-icon {
+		display: inline-block;
+		line-height: 10px;
+		width: 92px;
+		height: 92px;
+		background: $basic-white;
+		border-radius: $radius-icon;
+		padding: 14px;
+	}
+	
+	&__list-subtitle {
+		padding: 30px 0 15px;
+	}
+
+  &__list-dsc {
+    @include paragraph;
+		line-height: 26px;
+  }
+
+  &__list {
+    padding: 30px;
+
+    @include vieport-md {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 60px;
+		padding: 60px 0;
+    } 
+  }
+}
+
+.subtitle-link {
+	text-decoration: none;
+	@include h3;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.subtitle-link:hover {
+	color: $accent-color;
+}
+
+
